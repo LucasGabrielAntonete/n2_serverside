@@ -1,0 +1,29 @@
+{
+  "name": "lucas_antonete_trabalho_n2_serverside",
+  "version": "2.0.0",
+  "description": "API de veículos com Express, Prisma e arquitetura DDD + MVC",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:push": "prisma db push",
+    "db:seed:sql": "prisma db execute --schema prisma/schema.prisma --file prisma/local.sql",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.17.1",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "prisma": "^6.17.1"
+  }
+}

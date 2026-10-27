@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Veiculo {
+  id             Int       @id @default(autoincrement())
+  placa_veiculo  String    @unique
+  modelo_veiculo String
+  preco_veiculo  Float
+  deleted_at     DateTime?
+  created_at     DateTime  @default(now())
+  updated_at     DateTime  @updatedAt
+
+  @@index([modelo_veiculo])
+  @@index([deleted_at])
+  @@map("veiculos")
+}
